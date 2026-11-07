@@ -130,13 +130,8 @@ export function TeamSection({ detailed = false }: { detailed?: boolean }) {
               experiencia individual es la base técnica que aporto al estudio.
             </p>
           )}
-          <a
-            className="text-link"
-            href={contacts.daniel.linkedin}
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Ver trayectoria de Daniel
+          <a className="text-link" href="/equipo/daniel/">
+            Conocer a Daniel
             <Arrow diagonal />
           </a>
         </article>
