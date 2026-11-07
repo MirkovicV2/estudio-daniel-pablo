@@ -2,12 +2,12 @@
 
 :root {
   color-scheme: light;
-  --paper: #f5f2e9;
+  --paper: #f7f3ea;
   --ink: #25271f;
   --muted: #64665d;
-  --blue: #2744d8;
+  --blue: #bd4d32;
   --line: #d3d0c3;
-  --cream: #eae5d8;
+  --cream: #eee8dc;
   --display: 'Space Grotesk Variable', sans-serif;
   --body: 'DM Sans Variable', sans-serif;
   --ease: cubic-bezier(0.22, 1, 0.36, 1);
@@ -139,10 +139,19 @@ img {
   display: flex;
   flex-direction: column;
   font: 500 26px/1.1 var(--display);
-  letter-spacing: -0.08em;
+  letter-spacing: -0.04em;
+}
+.wordmark-lockup {
+  display: flex;
+  align-items: center;
+  gap: 9px;
+}
+.brand-mark {
+  width: 29px;
+  height: 29px;
 }
 .wordmark-descriptor {
-  margin-top: 8px;
+  margin-left: 38px;
   font: 9px/1.4 var(--body);
   text-transform: uppercase;
   letter-spacing: 0.13em;
@@ -318,7 +327,7 @@ img {
 .connection-canvas {
   position: relative;
   height: 460px;
-  background: #e4e2d7;
+  background: #ebe5d9;
   overflow: hidden;
 }
 .connection-canvas::before {
@@ -355,8 +364,8 @@ img {
   width: 58%;
   height: 280px;
   padding: 19px;
-  background: #eddfb0;
-  color: #383729;
+  background: #f1d2c4;
+  color: #3a2b26;
   transform: rotate(-10deg);
 }
 .folio-identity > span:first-child {
@@ -703,7 +712,7 @@ details[open] > summary .accordion-plus {
   color: #b5b6a9;
 }
 .team-section .eyebrow > span:first-child {
-  color: #a0b2ff;
+  color: #f1a18a;
 }
 .team-grid {
   display: grid;
@@ -725,7 +734,7 @@ details[open] > summary .accordion-plus {
   height: 125px;
   display: grid;
   place-items: center;
-  background: #3c43bb;
+  background: #bd4d32;
   color: #e8ebd7;
   font: 400 47px/1 var(--display);
   letter-spacing: -0.11em;
@@ -759,7 +768,7 @@ details[open] > summary .accordion-plus {
   font-size: 12px;
 }
 .team-section a:focus-visible {
-  outline-color: #bbc7ff;
+  outline-color: #f1d2c4;
 }
 .team-more {
   margin-top: 38px;
@@ -832,7 +841,7 @@ details[open] > summary .accordion-plus {
 .contact-cta-inner > div > p {
   font-size: 15px;
   max-width: 350px;
-  color: #e3e7ff;
+  color: #f5ddd2;
 }
 .contact-cta .button {
   background: var(--paper);
@@ -859,8 +868,15 @@ details[open] > summary .accordion-plus {
   padding-block: 54px 28px;
 }
 .footer-wordmark {
-  font: 500 32px/1 var(--display);
-  letter-spacing: -0.08em;
+  display: inline-flex;
+  align-items: center;
+  gap: 12px;
+  font: 600 30px/1 var(--display);
+  letter-spacing: -0.04em;
+}
+.footer-brand-mark {
+  width: 34px;
+  height: 34px;
 }
 .site-footer > div:first-child p {
   color: var(--muted);
@@ -1459,9 +1475,13 @@ details[open] > summary .accordion-plus {
   .wordmark {
     font-size: 23px;
   }
+  .brand-mark {
+    width: 26px;
+    height: 26px;
+  }
   .wordmark-descriptor {
     font-size: 8px;
-    margin-top: 7px;
+    margin-left: 35px;
   }
   .desktop-nav {
     display: none;
@@ -1886,6 +1906,10 @@ details[open] > summary .accordion-plus {
   }
   .footer-wordmark {
     font-size: 30px;
+  }
+  .footer-brand-mark {
+    width: 30px;
+    height: 30px;
   }
   .site-footer > div:first-child p {
     font-size: 11px;

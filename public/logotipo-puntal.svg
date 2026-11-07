@@ -1,0 +1,6 @@
+﻿<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 340 88" role="img" aria-labelledby="title">
+  <title id="title">Puntal — estudio digital</title>
+  <path d="M20 72V16h27c18 0 27 9 27 25s-9 25-27 25H20M20 42h42" fill="none" stroke="#25271f" stroke-width="7" stroke-linecap="square" stroke-linejoin="miter"/>
+  <path d="M20 42h42" fill="none" stroke="#bd4d32" stroke-width="7" stroke-linecap="square"/>
+  <text x="94" y="65" fill="#25271f" font-family="Space Grotesk, Arial, sans-serif" font-size="54" font-weight="600" letter-spacing="-3">puntal</text>
+</svg>

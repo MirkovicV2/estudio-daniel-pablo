@@ -1,4 +1,5 @@
 import { brand, contacts } from '../content/site';
+import { stripBase, withBase } from '../utils/paths';
 import { Arrow } from './Primitives';
 const items = [
   { href: '/servicios/', label: 'Qué hacemos' },
@@ -6,26 +7,38 @@ const items = [
   { href: '/estudio/', label: 'El estudio' },
 ];
 export function Header({ path }: { path: string }) {
+  const currentPath = stripBase(path);
   return (
     <header className="site-header shell">
-      <a href="/" className="wordmark" aria-label={`${brand.wordmark}, inicio`}>
-        <span>{brand.wordmark}</span>
+      <a
+        href={withBase('/')}
+        className="wordmark"
+        aria-label={`${brand.wordmark}, inicio`}
+      >
+        <span className="wordmark-lockup">
+          <img
+            className="brand-mark"
+            src={`${import.meta.env.BASE_URL}isotipo-puntal.svg`}
+            alt=""
+          />
+          <span>{brand.wordmark}</span>
+        </span>
         <span className="wordmark-descriptor">{brand.descriptor}</span>
       </a>
       <nav className="desktop-nav" aria-label="Navegación principal">
         {items.map((item) => (
           <a
             key={item.href}
-            href={item.href}
-            aria-current={path === item.href ? 'page' : undefined}
+            href={withBase(item.href)}
+            aria-current={currentPath === item.href ? 'page' : undefined}
           >
             {item.label}
           </a>
         ))}
         <a
-          href="/contacto/"
+          href={withBase('/contacto/')}
           className="nav-contact"
-          aria-current={path === '/contacto/' ? 'page' : undefined}
+          aria-current={currentPath === '/contacto/' ? 'page' : undefined}
         >
           Hablemos
           <Arrow diagonal />
@@ -40,11 +53,11 @@ export function Header({ path }: { path: string }) {
         </summary>
         <nav aria-label="Navegación móvil">
           {items.map((item) => (
-            <a key={item.href} href={item.href}>
+            <a key={item.href} href={withBase(item.href)}>
               {item.label}
             </a>
           ))}
-          <a href="/contacto/">
+          <a href={withBase('/contacto/')}>
             Hablemos
             <Arrow diagonal />
           </a>
@@ -57,8 +70,13 @@ export function Footer() {
   return (
     <footer className="site-footer shell">
       <div>
-        <a className="footer-wordmark" href="/">
-          {brand.wordmark}
+        <a className="footer-wordmark" href={withBase('/')}>
+          <img
+            className="footer-brand-mark"
+            src={`${import.meta.env.BASE_URL}isotipo-puntal.svg`}
+            alt=""
+          />
+          <span>{brand.wordmark}</span>
         </a>
         <p>
           {brand.descriptor}
@@ -67,10 +85,10 @@ export function Footer() {
         </p>
       </div>
       <nav aria-label="Navegación del pie">
-        <a href="/servicios/">Servicios</a>
-        <a href="/estudio/">El estudio</a>
-        <a href="/proyectos/deja-vu/">Déjà Vu Kebab</a>
-        <a href="/contacto/">Contacto</a>
+        <a href={withBase('/servicios/')}>Servicios</a>
+        <a href={withBase('/estudio/')}>El estudio</a>
+        <a href={withBase('/proyectos/deja-vu/')}>Déjà Vu Kebab</a>
+        <a href={withBase('/contacto/')}>Contacto</a>
       </nav>
       <div className="footer-people">
         <a href={`mailto:${contacts.daniel.email}`}>

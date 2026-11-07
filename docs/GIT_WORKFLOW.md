@@ -42,7 +42,9 @@ git merge develop
 git push
 ```
 
-Abrir las siguientes pull requests hacia `develop` con los cambios de cada ámbito. Resolver cualquier conflicto conservando las aportaciones. No usar force push ni borrar las ramas requeridas. `main` solo debe recibir una versión estable. No se configura GitHub Pages ni un despliegue del sitio.
+Abrir las siguientes pull requests hacia `develop` con los cambios de cada ámbito. Resolver cualquier conflicto conservando las aportaciones. No usar force push ni borrar las ramas requeridas. `main` solo debe recibir una versión estable.
+
+La configuración de Astro admite `SITE_URL` y `PAGES_BASE` para desplegar bajo una ruta de GitHub Pages. Pages no está activado: GitHub rechazó configurarlo porque el plan actual no permite Pages para estos repositorios privados. Se mantienen privados; publicar requiere un plan compatible o un repositorio público separado para el artefacto estático.
 
 Git se ha preparado como MinGit oficial en este equipo, sin cambiar PATH global. Para usarlo en el terminal actual:
 
