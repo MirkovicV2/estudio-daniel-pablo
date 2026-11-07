@@ -2,21 +2,21 @@
   navigation: auto;
 }
 ::view-transition-old(root) {
-  animation: page-out 0.17s ease both;
+  animation: page-out 0.14s ease both;
 }
 ::view-transition-new(root) {
-  animation: page-in 0.28s ease both;
+  animation: page-in 0.24s ease both;
 }
 @keyframes page-out {
   to {
     opacity: 0;
-    transform: translateY(-6px);
+    transform: translateY(-4px);
   }
 }
 @keyframes page-in {
   from {
     opacity: 0;
-    transform: translateY(9px);
+    transform: translateY(8px);
   }
   to {
     opacity: 1;
@@ -26,34 +26,68 @@
 @keyframes enter {
   from {
     opacity: 0;
-    transform: translateY(18px);
+    transform: translateY(16px);
   }
   to {
     opacity: 1;
     transform: none;
   }
 }
+@keyframes paper-left {
+  from {
+    opacity: 0;
+    transform: translateY(24px) rotate(-3deg);
+  }
+  to {
+    opacity: 1;
+    transform: rotate(-10deg);
+  }
+}
+@keyframes paper-right {
+  from {
+    opacity: 0;
+    transform: translateY(26px) rotate(0);
+  }
+  to {
+    opacity: 1;
+    transform: rotate(8deg);
+  }
+}
 [data-reveal] {
   transition:
-    opacity 0.55s var(--ease),
-    transform 0.55s var(--ease);
+    opacity 0.5s var(--ease),
+    transform 0.5s var(--ease);
 }
 .will-reveal {
   opacity: 0;
-  transform: translateY(18px);
+  transform: translateY(22px);
 }
 @media (prefers-reduced-motion: no-preference) {
   .hero-heading > .eyebrow {
-    animation: enter 0.6s var(--ease) both;
+    animation: enter 0.5s var(--ease) both;
   }
-  .hero-heading h1 {
-    animation: enter 0.6s 0.06s var(--ease) both;
+  .hero h1 {
+    animation: enter 0.6s 0.04s var(--ease) both;
   }
   .hero-copy {
-    animation: enter 0.6s 0.12s var(--ease) both;
+    animation: enter 0.55s 0.1s var(--ease) both;
   }
   .hero-side {
-    animation: enter 0.6s 0.15s var(--ease) both;
+    animation: enter 0.6s 0.12s var(--ease) both;
+  }
+  .folio-identity {
+    animation: paper-left 0.6s 0.12s var(--ease) backwards;
+  }
+  .folio-browser {
+    animation: paper-right 0.6s 0.18s var(--ease) backwards;
+  }
+  .service-preview-detail[open] .service-preview-body,
+  .service-detail[open] .service-detail-body {
+    animation: enter 0.18s ease both;
+  }
+  .work-art,
+  .case-cover {
+    view-transition-name: project-cover;
   }
 }
 @media (prefers-reduced-motion: reduce) {

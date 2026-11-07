@@ -17,12 +17,18 @@ export function Home() {
     <>
       <section className="hero shell">
         <div className="hero-heading">
-          <Eyebrow>Diseño + desarrollo + contenido</Eyebrow>
+          <Eyebrow>
+            <span className="studio-star" aria-hidden="true">
+              ✳
+            </span>{' '}
+            Dos especialidades. Un mismo proyecto.
+          </Eyebrow>
           <h1>
             Tu negocio,
             <br />
-            <em>bien presentado</em>
-            <br />y mejor <span>conectado.</span>
+            <em>bien presentado.</em>
+            <br />
+            <span>Mejor conectado.</span>
           </h1>
         </div>
         <div className="hero-side">
@@ -31,7 +37,7 @@ export function Home() {
         <div className="hero-copy">
           <p>{brand.description}</p>
           <div className="hero-actions">
-            <Action href="/contacto/">Cuéntanos tu idea</Action>
+            <Action href="/contacto/">Hablemos de tu idea</Action>
             <a className="text-link" href="/proyectos/deja-vu/">
               Ver nuestro trabajo
               <Arrow diagonal />
@@ -48,18 +54,6 @@ export function Home() {
       </section>
       <WorkSection />
       <ServicesPreview />
-      <div
-        className="statement-band"
-        aria-label="Diseño que se ve. Desarrollo que conecta."
-      >
-        <div className="shell">
-          <span>Diseño que se ve.</span>
-          <span className="statement-amp" aria-hidden="true">
-            &
-          </span>
-          <span>Desarrollo que conecta.</span>
-        </div>
-      </div>
       <TeamSection />
       <MethodSection />
       <ContactCTA />

@@ -157,7 +157,37 @@ test('Contenido disponible sin JavaScript', async ({ browser, baseURL }) => {
   ).toBeVisible();
   await page.locator('[data-mobile-menu] summary').click();
   await expect(page.locator('[data-mobile-menu] nav')).toBeVisible();
+  const service = page.locator('.service-preview-detail').nth(2);
+  await service.locator('summary').click();
+  await expect(service.locator('.service-preview-body')).toBeVisible();
+  await expect(service.locator('.service-preview-body')).toContainText(
+    'herramienta',
+  );
   await context.close();
+});
+
+test('Servicios de portada con teclado y cambio de preferencia de movimiento', async ({
+  page,
+}) => {
+  await page.goto('/');
+  const services = page.locator('.service-preview-detail');
+  await expect(services).toHaveCount(5);
+  const content = services.nth(1);
+  await content.locator('summary').focus();
+  await page.keyboard.press('Enter');
+  await expect(content).toHaveAttribute('open', '');
+  await expect(services.first()).not.toHaveAttribute('open', '');
+  await expect(content.locator('.service-preview-body')).toBeVisible();
+  await expect(
+    content.getByRole('link', { name: 'Ver qué incluye' }),
+  ).toHaveAttribute('href', '/servicios/#contenido-promocion');
+  await page.emulateMedia({ reducedMotion: 'reduce' });
+  await expect(page.locator('.will-reveal')).toHaveCount(0);
+  expect(
+    await page
+      .locator('h1')
+      .evaluate((element) => getComputedStyle(element).animationName),
+  ).toBe('none');
 });
 
 test('Preferencia de movimiento reducido', async ({ page }) => {

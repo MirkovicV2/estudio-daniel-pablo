@@ -5,7 +5,7 @@
 - `npm.cmd run lint`: correcto.
 - `npm.cmd run check`: 0 errores, 0 avisos y 0 sugerencias.
 - `npm.cmd run build`: correcto; 6 rutas públicas, la ruta 404 y el endpoint robots.
-- `npm.cmd test`: **13 pruebas Playwright superadas** en Edge headless sobre Windows.
+- `npm.cmd test`: **14 pruebas Playwright superadas** en Edge headless sobre Windows.
 - `npm.cmd run test:seo`: canonical, Open Graph, robots, sitemap y enlaces configurables comprobados con una URL reservada `.invalid` en `artifacts/seo-fixture/`. La prueba verifica que el `dist/` original queda intacto; no se ha inventado un dominio de producción.
 
 ## Alcance de las pruebas de navegador
@@ -16,7 +16,11 @@ La navegación móvil se prueba con teclado, enlace para saltar al contenido, fo
 
 Todas las rutas se recorren a 375, 768 y 1440 px, comprobando que no hay desbordamiento horizontal. Se han inspeccionado visualmente las capturas del inicio en los tres tamaños y la composición general de la página. Son tamaños emulados en navegador, no dispositivos físicos.
 
-Los servicios se abren con teclado y al seguir un enlace a su sección. No existe formulario de envío.
+Los cinco servicios de la portada se despliegan con teclado, admiten un único panel abierto y funcionan sin JavaScript. Los servicios detallados se abren con teclado y al seguir un enlace a su sección. Se prueba también el cambio a movimiento reducido con la página abierta. No existe formulario de envío.
+
+## Rediseño del 7 de noviembre de 2026
+
+La investigación, las fuentes primarias y las decisiones adoptadas están en [docs/DESIGN_RESEARCH.md](docs/DESIGN_RESEARCH.md). La composición de identidad/web es original; Déjà Vu ocupa una superficie visual mayor y dispone de una ficha breve; se ha eliminado un manifiesto repetido. Los servicios presentan alcance sin salir del inicio, el equipo tiene una sección propia oscura y el método se muestra como secuencia. Se han revisado las capturas del inicio a 375, 768 y 1440 px, las páginas completas y el caso y perfil de Daniel. Después de ajustar las proporciones del gráfico en tablet y móvil se repitieron las comprobaciones de accesibilidad y de los tres tamaños: 9 pruebas adicionales correctas.
 
 La ruta `/equipo/daniel/` se verifica con el resto de la web, incluidos sus enlaces y accesibilidad. Se han revisado visualmente sus capturas de móvil y escritorio. El enlace al portfolio completo se verifica en la fixture SEO y se mantiene ausente en la entrega sin URL aprobada. La base común se validó en su rama antes de añadir el perfil.
 

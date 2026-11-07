@@ -13,9 +13,9 @@ export function WorkSection() {
         <div>
           <Eyebrow number="01">Trabajo seleccionado</Eyebrow>
           <h2>
-            Un negocio local.
+            De un negocio local
             <br />
-            <em>Un trabajo conjunto.</em>
+            <em>a un proyecto conectado.</em>
           </h2>
         </div>
         <p>
@@ -26,13 +26,19 @@ export function WorkSection() {
       <a className="work-feature" href="/proyectos/deja-vu/" data-reveal>
         <div className="work-art">
           <DejaGraphic />
+          <span className="work-open" aria-hidden="true">
+            <Arrow diagonal />
+          </span>
         </div>
         <div className="work-summary">
           <span className="work-category">
             WEB + IDENTIDAD VISUAL + CONTENIDO
           </span>
           <h3>{dejaVu.title}</h3>
-          <p>{dejaVu.intro}</p>
+          <p>
+            Desarrollo web, diseño y contenido visual para un negocio de Rivas
+            Vaciamadrid.
+          </p>
           <span className="work-place">
             {dejaVu.location} · Encargo profesional · {dejaVu.period}
           </span>
@@ -49,13 +55,13 @@ export function WorkSection() {
 export function ServicesPreview() {
   return (
     <section className="section shell services-preview" id="servicios">
-      <div className="section-heading heading-split" data-reveal>
+      <div className="section-heading services-heading" data-reveal>
         <div>
           <Eyebrow number="02">Qué podemos hacer</Eyebrow>
           <h2>
-            Lo que necesitas.
+            Cada negocio,
             <br />
-            <em>Con las piezas adecuadas.</em>
+            <em>sus piezas.</em>
           </h2>
         </div>
         <p>
@@ -65,22 +71,33 @@ export function ServicesPreview() {
       </div>
       <div className="service-rows">
         {services.map((service) => (
-          <a
-            href={`/servicios/#${service.id}`}
-            className="service-row"
+          <details
+            className="service-preview-detail"
             key={service.id}
+            name="home-services"
+            open={service.number === '01'}
             data-reveal
           >
-            <span className="service-number">{service.number}</span>
-            <h3>
-              {service.short}
-              {service.feasibility && (
-                <span className="feasibility">Estudio de viabilidad</span>
-              )}
-            </h3>
-            <p>{service.title}</p>
-            <Arrow diagonal />
-          </a>
+            <summary>
+              <span className="service-number">{service.number}</span>
+              <span className="service-preview-title">
+                {service.short}
+                {service.feasibility && (
+                  <span className="feasibility">Estudio de viabilidad</span>
+                )}
+              </span>
+              <span className="accordion-plus" aria-hidden="true">
+                +
+              </span>
+            </summary>
+            <div className="service-preview-body">
+              <h3>{service.title}</h3>
+              <p>{service.description}</p>
+              <a className="text-link" href={`/servicios/#${service.id}`}>
+                Ver qué incluye <Arrow diagonal />
+              </a>
+            </div>
+          </details>
         ))}
       </div>
       <a className="text-link service-all" href="/servicios/">
@@ -94,84 +111,86 @@ export function ServicesPreview() {
 export function TeamSection({ detailed = false }: { detailed?: boolean }) {
   return (
     <section
-      className={`section shell team-section ${detailed ? 'team-detailed' : ''}`}
+      className={`section team-section ${detailed ? 'team-detailed' : ''}`}
       id="equipo"
     >
-      <div className="section-heading heading-split" data-reveal>
-        <div>
-          <Eyebrow number="03">El equipo</Eyebrow>
-          <h2>
-            Unimos lo que
-            <br />
-            <em>cada uno hace mejor.</em>
-          </h2>
+      <div className="shell">
+        <div className="section-heading heading-split" data-reveal>
+          <div>
+            <Eyebrow number="03">El equipo</Eyebrow>
+            <h2>
+              Dos personas.
+              <br />
+              <em>Todas las conexiones.</em>
+            </h2>
+          </div>
+          <p>
+            Daniel desarrolla. Pablo diseña. Trabajamos juntos para que cada
+            pieza forme parte del mismo proyecto.
+          </p>
         </div>
-        <p>
-          Daniel desarrolla. Pablo diseña. Trabajamos juntos para que cada pieza
-          forme parte del mismo proyecto.
-        </p>
-      </div>
-      <div className="team-grid">
-        <article className="team-person person-daniel" data-reveal>
-          <span className="person-mark" aria-hidden="true">
-            {'{d}'}
-          </span>
-          <Eyebrow>Desarrollo & conexiones</Eyebrow>
-          <h3>{contacts.daniel.shortName}</h3>
-          <p>
-            Desarrollo full stack, web, backend, APIs e integraciones. Aporto
-            experiencia en modernización de aplicaciones y digitalización de
-            procesos.
-          </p>
-          {detailed && (
+        <div className="team-grid">
+          <article className="team-person person-daniel" data-reveal>
+            <span className="person-mark" aria-hidden="true">
+              {'</>'}
+            </span>
+            <Eyebrow>Desarrollo & conexiones</Eyebrow>
+            <h3>{contacts.daniel.shortName}</h3>
             <p>
-              Mi trayectoria profesional incluye software bancario, gestión de
-              datos para CIEMAT y aplicaciones de la Administración. Esa
-              experiencia individual es la base técnica que aporto al estudio.
+              Desarrollo full stack, web, backend, APIs e integraciones. Aporto
+              experiencia en modernización de aplicaciones y digitalización de
+              procesos.
             </p>
-          )}
-          <a className="text-link" href="/equipo/daniel/">
-            Conocer a Daniel
-            <Arrow diagonal />
-          </a>
-        </article>
-        <article className="team-person person-pablo" data-reveal>
-          <span className="person-mark" aria-hidden="true">
-            p*
-          </span>
-          <Eyebrow>Diseño & contenido</Eyebrow>
-          <h3>{contacts.pablo.shortName}</h3>
-          <p>
-            Diseño multimedia y gráfico, branding, motion, fotografía y vídeo.
-            Una mirada visual que conecta identidad, contenido y comunicación.
-          </p>
-          {detailed && (
-            <>
+            {detailed && (
               <p>
-                Especializado en motion, branding y postproducción, con
-                experiencia individual en campañas aeroportuarias, adaptación
-                retail y coordinación con clientes.
+                Mi trayectoria profesional incluye software bancario, gestión de
+                datos para CIEMAT y aplicaciones de la Administración. Esa
+                experiencia individual es la base técnica que aporto al estudio.
               </p>
-              <p>Grado en Diseño Gráfico y Multimedia en UDIT, 2018–2025.</p>
-            </>
-          )}
-          <a
-            className="text-link"
-            href={contacts.pablo.portfolio}
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Ver portfolio de Pablo
-            <Arrow diagonal />
+            )}
+            <a className="text-link" href="/equipo/daniel/">
+              Conocer a Daniel
+              <Arrow diagonal />
+            </a>
+          </article>
+          <article className="team-person person-pablo" data-reveal>
+            <span className="person-mark" aria-hidden="true">
+              ✳
+            </span>
+            <Eyebrow>Diseño & contenido</Eyebrow>
+            <h3>{contacts.pablo.shortName}</h3>
+            <p>
+              Diseño multimedia y gráfico, branding, motion, fotografía y vídeo.
+              Una mirada visual que conecta identidad, contenido y comunicación.
+            </p>
+            {detailed && (
+              <>
+                <p>
+                  Especializado en motion, branding y postproducción, con
+                  experiencia individual en campañas aeroportuarias, adaptación
+                  retail y coordinación con clientes.
+                </p>
+                <p>Grado en Diseño Gráfico y Multimedia en UDIT, 2018–2025.</p>
+              </>
+            )}
+            <a
+              className="text-link"
+              href={contacts.pablo.portfolio}
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              Ver portfolio de Pablo
+              <Arrow diagonal />
+            </a>
+          </article>
+        </div>
+        {!detailed && (
+          <a className="text-link team-more" href="/estudio/">
+            Así trabajamos juntos
+            <Arrow />
           </a>
-        </article>
+        )}
       </div>
-      {!detailed && (
-        <a className="text-link team-more" href="/estudio/">
-          Así trabajamos juntos
-          <Arrow />
-        </a>
-      )}
     </section>
   );
 }
