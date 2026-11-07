@@ -3,6 +3,7 @@ import { services } from '../content/services';
 import { dejaVu } from '../content/work';
 import { Action, Arrow, Eyebrow } from './Primitives';
 import { ConnectionGraphic, DejaGraphic } from './Graphics';
+import { withBase } from '../utils/paths';
 import {
   ContactCTA,
   Examples,
@@ -37,8 +38,8 @@ export function Home() {
         <div className="hero-copy">
           <p>{brand.description}</p>
           <div className="hero-actions">
-            <Action href="/contacto/">Hablemos de tu idea</Action>
-            <a className="text-link" href="/proyectos/deja-vu/">
+            <Action href={withBase('/contacto/')}>Hablemos de tu idea</Action>
+            <a className="text-link" href={withBase('/proyectos/deja-vu/')}>
               Ver nuestro trabajo
               <Arrow diagonal />
             </a>
@@ -116,7 +117,7 @@ export function ServicesPage() {
                 <Eyebrow>Ejemplo de solución</Eyebrow>
                 <p>{service.example}</p>
                 {service.note && <p className="service-note">{service.note}</p>}
-                <a className="text-link" href="/contacto/">
+                <a className="text-link" href={withBase('/contacto/')}>
                   Hablar de esta necesidad
                   <Arrow diagonal />
                 </a>
@@ -174,7 +175,9 @@ export function StudioPage() {
           En Déjà Vu Kebab unimos desarrollo y modernización web con diseño,
           fotografía, cartelería, vídeo y puesta en marcha de Instagram.
         </p>
-        <Action href="/proyectos/deja-vu/">Conocer el caso de Déjà Vu</Action>
+        <Action href={withBase('/proyectos/deja-vu/')}>
+          Conocer el caso de Déjà Vu
+        </Action>
       </section>
       <ContactCTA />
     </>
@@ -186,7 +189,7 @@ export function DejaVuPage() {
     <>
       <article>
         <header className="case-intro shell">
-          <a className="back-link" href="/#trabajo">
+          <a className="back-link" href={withBase('/#trabajo')}>
             ← Volver al trabajo seleccionado
           </a>
           <Eyebrow>
@@ -371,8 +374,8 @@ export function NotFound() {
         qué necesita tu negocio.
       </p>
       <div className="hero-actions">
-        <Action href="/">Volver al inicio</Action>
-        <Action href="/contacto/" secondary>
+        <Action href={withBase('/')}>Volver al inicio</Action>
+        <Action href={withBase('/contacto/')} secondary>
           Contactar
         </Action>
       </div>

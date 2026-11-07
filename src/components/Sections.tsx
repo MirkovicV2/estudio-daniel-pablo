@@ -4,6 +4,7 @@ import { dejaVu } from '../content/work';
 import { canPublish } from '../content/editorial';
 import { Action, Arrow, Eyebrow } from './Primitives';
 import { DejaGraphic } from './Graphics';
+import { withBase } from '../utils/paths';
 
 export function WorkSection() {
   if (!canPublish(dejaVu)) return null;
@@ -23,7 +24,11 @@ export function WorkSection() {
           Kebab.
         </p>
       </div>
-      <a className="work-feature" href="/proyectos/deja-vu/" data-reveal>
+      <a
+        className="work-feature"
+        href={withBase('/proyectos/deja-vu/')}
+        data-reveal
+      >
         <div className="work-art">
           <DejaGraphic />
           <span className="work-open" aria-hidden="true">
@@ -93,14 +98,17 @@ export function ServicesPreview() {
             <div className="service-preview-body">
               <h3>{service.title}</h3>
               <p>{service.description}</p>
-              <a className="text-link" href={`/servicios/#${service.id}`}>
+              <a
+                className="text-link"
+                href={withBase(`/servicios/#${service.id}`)}
+              >
                 Ver qué incluye <Arrow diagonal />
               </a>
             </div>
           </details>
         ))}
       </div>
-      <a className="text-link service-all" href="/servicios/">
+      <a className="text-link service-all" href={withBase('/servicios/')}>
         Explorar servicios y ejemplos
         <Arrow />
       </a>
@@ -148,7 +156,7 @@ export function TeamSection({ detailed = false }: { detailed?: boolean }) {
                 experiencia individual es la base técnica que aporto al estudio.
               </p>
             )}
-            <a className="text-link" href="/equipo/daniel/">
+            <a className="text-link" href={withBase('/equipo/daniel/')}>
               Conocer a Daniel
               <Arrow diagonal />
             </a>
@@ -185,7 +193,7 @@ export function TeamSection({ detailed = false }: { detailed?: boolean }) {
           </article>
         </div>
         {!detailed && (
-          <a className="text-link team-more" href="/estudio/">
+          <a className="text-link team-more" href={withBase('/estudio/')}>
             Así trabajamos juntos
             <Arrow />
           </a>
@@ -242,7 +250,7 @@ export function Examples() {
             <Eyebrow>{example.sector} · Ejemplo</Eyebrow>
             <h3>{example.title}</h3>
             <p>{example.text}</p>
-            <a className="text-link" href="/contacto/">
+            <a className="text-link" href={withBase('/contacto/')}>
               Hablar de una idea similar
               <Arrow diagonal />
             </a>
@@ -268,7 +276,7 @@ export function ContactCTA() {
             Una web, una identidad visual o herramientas que trabajen mejor
             juntas. El primer paso es hablarlo.
           </p>
-          <Action href="/contacto/">Hablemos de tu proyecto</Action>
+          <Action href={withBase('/contacto/')}>Hablemos de tu proyecto</Action>
         </div>
         <span className="cta-location">{brand.location}</span>
       </div>

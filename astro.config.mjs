@@ -5,11 +5,13 @@ import sitemap from '@astrojs/sitemap';
 
 if (existsSync('.env')) process.loadEnvFile('.env');
 const site = process.env.SITE_URL?.trim() || undefined;
+const base = process.env.PAGES_BASE?.trim() || '/';
 if (site && !/^https?:\/\//.test(site))
   throw new Error('SITE_URL debe ser una URL http(s) real.');
 
 export default defineConfig({
   site,
+  base,
   output: 'static',
   trailingSlash: 'always',
   integrations: [
