@@ -16,6 +16,7 @@ Repositorio privado de la cuenta **MirkovicV2**: https://github.com/MirkovicV2/e
 
 - [PR #1 — Web y elementos comunes](https://github.com/MirkovicV2/estudio-daniel-pablo/pull/1).
 - [PR #2 — Perfil de Daniel](https://github.com/MirkovicV2/estudio-daniel-pablo/pull/2).
+- [PR #3 — Rediseño con caso destacado y servicios desplegables](https://github.com/MirkovicV2/estudio-daniel-pablo/pull/3). Las referencias y decisiones se documentan en [DESIGN_RESEARCH.md](DESIGN_RESEARCH.md).
 
 `origin` apunta a https://github.com/MirkovicV2/estudio-daniel-pablo.git. Las cuatro ramas están publicadas y tienen seguimiento local. El bloqueo de la cuenta anterior se resolvió al autorizar GitHub CLI con la cuenta nueva. La autenticación queda en el almacén de credenciales del sistema; este repositorio usa el ayudante de GitHub CLI mediante configuración Git local, sin credenciales en el código.
 
