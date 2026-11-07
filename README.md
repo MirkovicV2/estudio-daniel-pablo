@@ -1,8 +1,8 @@
-# Daniel & Pablo — Estudio digital
+# Puntal — Estudio digital
 
-Web comercial local con marca provisional. Los elementos comunes se desarrollan en `feature/web-estudio`; el perfil de Daniel, en `feature/portfolio-daniel`, ambas desde `develop`. `main` conserva el punto de partida.
+Web comercial del estudio de Daniel y Pablo. **Puntal** es una propuesta de marca y sigue pendiente de aprobación y comprobación registral. Los elementos comunes se desarrollan en `feature/web-estudio`; el perfil de Daniel, en `feature/portfolio-daniel`, ambas desde `develop`. `main` conserva el punto de partida.
 
-El portfolio de Pablo permanece en https://pablelas.es/. El contenido sigue `Prompts_Codex_Daniel_Pablo.md`, facilitado el 7 de noviembre de 2026. No hay despliegue en producción.
+El portfolio de Pablo permanece en https://pablelas.es/. El contenido sigue `Prompts_Codex_Daniel_Pablo.md`, facilitado el 7 de noviembre de 2026. Web pública: https://mirkovicv2.github.io/estudio-daniel-pablo/.
 
 ## Ejecutar en este equipo
 
@@ -68,7 +68,7 @@ No hay números, precios, métricas, testimonios o disponibilidad inventados. Lo
 
 Las formas y composiciones tipográficas son originales. No se extraen ni reutilizan fotografías o vídeos del portfolio de Pablo ni del cliente. Fontsource sirve las fuentes localmente. No hay analítica, cookies de terceros o vídeos incrustados.
 
-## SEO y futuro despliegue
+## SEO y despliegue
 
 `npm.cmd run test:seo` comprueba la configuración SEO con una URL reservada `.invalid` en una salida de prueba aislada. No modifica `dist/`.
 
@@ -79,11 +79,11 @@ Copiar `.env.example` a `.env` cuando existan URLs aprobadas:
 - `SITE_URL`: dominio real del estudio. Activa canonical, Open Graph absoluto, sitemap y robots indexable.
 - `PUBLIC_DANIEL_PORTFOLIO_URL`: URL real del portfolio completo. Si está vacío, no se renderiza ese enlace.
 
-Sin dominio, la versión local queda en noindex y no genera URLs de producción ficticias. El sitemap se genera cuando se configura `SITE_URL`, excluyendo la 404. `dist/` se puede alojar en un servidor estático con soporte de directorios y `404.html` para errores. No se configura alojamiento en esta entrega.
+La publicación usa GitHub Pages desde `develop` mediante `.github/workflows/deploy-pages.yml`. El workflow configura `SITE_URL` y `PAGES_BASE=/estudio-daniel-pablo`, genera sitemap y canonical y despliega `dist/`. La web se sirve bajo https://mirkovicv2.github.io/estudio-daniel-pablo/; el repositorio también es público.
 
 ## Git, verificaciones y pendientes
 
-Repositorio privado: [MirkovicV2/estudio-daniel-pablo](https://github.com/MirkovicV2/estudio-daniel-pablo). Las ramas `main`, `develop`, `feature/web-estudio` y `feature/portfolio-daniel` están publicadas con seguimiento de `origin`. La [PR #1](https://github.com/MirkovicV2/estudio-daniel-pablo/pull/1) integra la base común y la [PR #2](https://github.com/MirkovicV2/estudio-daniel-pablo/pull/2), el perfil de Daniel, en ese orden y hacia `develop`. `main` queda reservada para versiones estables.
+Repositorio público: [MirkovicV2/estudio-daniel-pablo](https://github.com/MirkovicV2/estudio-daniel-pablo). Las ramas `main`, `develop`, `feature/web-estudio` y `feature/portfolio-daniel` están publicadas con seguimiento de `origin`. La [PR #1](https://github.com/MirkovicV2/estudio-daniel-pablo/pull/1) integra la base común y la [PR #2](https://github.com/MirkovicV2/estudio-daniel-pablo/pull/2), el perfil de Daniel, en ese orden y hacia `develop`. `main` queda reservada para versiones estables.
 
 - [Flujo y orden de ramas](docs/GIT_WORKFLOW.md).
 - [PR de elementos comunes](docs/PR_WEB_ESTUDIO.md).

@@ -12,7 +12,7 @@ La rama de Daniel incorpora la base común para ejecutar la web completa. El ord
 
 ## Repositorio y revisiones
 
-Repositorio privado de la cuenta **MirkovicV2**: https://github.com/MirkovicV2/estudio-daniel-pablo.
+Repositorio público de la cuenta **MirkovicV2**: https://github.com/MirkovicV2/estudio-daniel-pablo. La web publicada está en https://mirkovicv2.github.io/estudio-daniel-pablo/.
 
 - [PR #1 — Web y elementos comunes](https://github.com/MirkovicV2/estudio-daniel-pablo/pull/1).
 - [PR #2 — Perfil de Daniel](https://github.com/MirkovicV2/estudio-daniel-pablo/pull/2).
