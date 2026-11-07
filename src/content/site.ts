@@ -1,12 +1,12 @@
 export const brand = {
-  name: 'Daniel & Pablo — Estudio digital',
-  wordmark: 'Daniel & Pablo',
+  name: 'Puntal — Estudio digital',
+  wordmark: 'Puntal',
   descriptor: 'Estudio digital',
   provisional: true,
   location: 'Rivas Vaciamadrid · Madrid · En remoto',
-  headline: 'Tu negocio, bien presentado y mejor conectado',
+  headline: 'Diseño claro. Tecnología bien conectada.',
   description:
-    'Unimos diseño, desarrollo y contenido para crear tu web y conectar los procesos que necesita tu negocio.',
+    'Un estudio digital de Daniel Doral y Pablo Castillo. Unimos diseño, desarrollo web y herramientas digitales para ayudar a los negocios a presentar mejor lo que hacen y simplificar procesos.',
 };
 export const contacts = {
   daniel: {

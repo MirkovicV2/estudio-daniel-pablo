@@ -9,7 +9,10 @@ export function Header({ path }: { path: string }) {
   return (
     <header className="site-header shell">
       <a href="/" className="wordmark" aria-label={`${brand.wordmark}, inicio`}>
-        <span>{brand.wordmark}</span>
+        <span className="wordmark-lockup">
+          <img className="brand-mark" src="/isotipo-puntal.svg" alt="" />
+          <span>{brand.wordmark}</span>
+        </span>
         <span className="wordmark-descriptor">{brand.descriptor}</span>
       </a>
       <nav className="desktop-nav" aria-label="Navegación principal">
@@ -58,7 +61,8 @@ export function Footer() {
     <footer className="site-footer shell">
       <div>
         <a className="footer-wordmark" href="/">
-          {brand.wordmark}
+          <img className="footer-brand-mark" src="/isotipo-puntal.svg" alt="" />
+          <span>{brand.wordmark}</span>
         </a>
         <p>
           {brand.descriptor}

@@ -1,0 +1,5 @@
+﻿<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" role="img" aria-labelledby="title">
+  <title id="title">Símbolo de Puntal</title>
+  <path d="M28 78V22h27c18 0 27 9 27 25s-9 25-27 25H28M28 48h42" fill="none" stroke="#25271f" stroke-width="8" stroke-linecap="square" stroke-linejoin="miter"/>
+  <path d="M28 48h42" fill="none" stroke="#bd4d32" stroke-width="8" stroke-linecap="square"/>
+</svg>

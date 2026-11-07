@@ -7,7 +7,7 @@ export function ConnectionGraphic() {
         aria-label="Composición original del estudio: una identidad visual, una web y las conexiones entre ellas"
       >
         <span className="graphic-label label-one">
-          PENSADO EN CONJUNTO / D&P
+          DISEÑO + TECNOLOGÍA / PUNTAL
         </span>
         <div className="folio-sheet folio-identity" aria-hidden="true">
           <span>01 — IDENTIDAD</span>
@@ -25,7 +25,7 @@ export function ConnectionGraphic() {
             <span>02 — WEB</span>
           </div>
           <div className="folio-browser-body">
-            <span className="folio-logo">d&p.</span>
+            <span className="folio-logo">puntal.</span>
             <strong>
               Bien
               <br />
