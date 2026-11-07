@@ -4,27 +4,51 @@ export function ConnectionGraphic() {
       <div
         className="connection-canvas"
         role="img"
-        aria-label="Composición original: dos formas se conectan para unir diseño y desarrollo"
+        aria-label="Composición original del estudio: una identidad visual, una web y las conexiones entre ellas"
       >
-        <div className="graphic-grid" />
-        <span className="graphic-label label-one">PENSAR / DISEÑAR</span>
-        <span className="graphic-label label-two">CONECTAR / CONSTRUIR</span>
-        <div className="shape shape-circle" />
-        <div className="shape shape-bracket">
-          <span aria-hidden="true">{'{ }'}</span>
-        </div>
-        <span className="graphic-amp" aria-hidden="true">
-          &
+        <span className="graphic-label label-one">
+          PENSADO EN CONJUNTO / D&P
         </span>
-        <div className="connection-note">
-          <span>VISUAL</span>
-          <span className="connection-note-line" />
-          <span>FUNCIONAL</span>
+        <div className="folio-sheet folio-identity" aria-hidden="true">
+          <span>01 — IDENTIDAD</span>
+          <strong>
+            Una buena
+            <br />
+            <em>idea.</em>
+          </strong>
+          <span className="folio-flower">✳</span>
+          <small>LA FORMA DE CONTARLO.</small>
         </div>
-        <span className="canvas-corner corner-one" />
-        <span className="canvas-corner corner-two" />
+        <div className="folio-sheet folio-browser" aria-hidden="true">
+          <div className="folio-browser-bar">
+            <span>● ● ●</span>
+            <span>02 — WEB</span>
+          </div>
+          <div className="folio-browser-body">
+            <span className="folio-logo">d&p.</span>
+            <strong>
+              Bien
+              <br />
+              conectada.
+            </strong>
+            <span className="folio-browser-cta">
+              EMPEZAMOS <span>↗</span>
+            </span>
+          </div>
+        </div>
+        <div className="folio-connector" aria-hidden="true">
+          <span>DISEÑO</span>
+          <i />
+          <span>DESARROLLO</span>
+          <b>↔</b>
+        </div>
+        <span className="graphic-label label-two">
+          UNA IDEA. MUCHAS PIEZAS.
+        </span>
       </div>
-      <figcaption>Dos especialidades. Un mismo proyecto.</figcaption>
+      <figcaption>
+        Identidad, web y contenido. Desde la misma conversación.
+      </figcaption>
     </figure>
   );
 }
