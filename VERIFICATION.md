@@ -1,11 +1,11 @@
-# Verificación — Web del estudio — base común
+# Verificación — Web del estudio completa
 
 ## Resultado
 
 - `npm.cmd run lint`: correcto.
 - `npm.cmd run check`: 0 errores, 0 avisos y 0 sugerencias.
-- `npm.cmd run build`: correcto; 5 rutas públicas, la ruta 404 y el endpoint robots.
-- `npm.cmd test`: **12 pruebas Playwright superadas** en Edge headless sobre Windows.
+- `npm.cmd run build`: correcto; 6 rutas públicas, la ruta 404 y el endpoint robots.
+- `npm.cmd test`: **13 pruebas Playwright superadas** en Edge headless sobre Windows.
 - `npm.cmd run test:seo`: canonical, Open Graph, robots, sitemap y enlaces configurables comprobados con una URL reservada `.invalid` en `artifacts/seo-fixture/`. La prueba verifica que el `dist/` original queda intacto; no se ha inventado un dominio de producción.
 
 ## Alcance de las pruebas de navegador
@@ -18,6 +18,8 @@ Todas las rutas se recorren a 375, 768 y 1440 px, comprobando que no hay desbord
 
 Los servicios se abren con teclado y al seguir un enlace a su sección. No existe formulario de envío.
 
+La ruta `/equipo/daniel/` se verifica con el resto de la web, incluidos sus enlaces y accesibilidad. Se han revisado visualmente sus capturas de móvil y escritorio. El enlace al portfolio completo se verifica en la fixture SEO y se mantiene ausente en la entrega sin URL aprobada. La base común se validó en su rama antes de añadir el perfil.
+
 ## Capturas locales
 
 En `artifacts/screenshots/`:
@@ -25,6 +27,7 @@ En `artifacts/screenshots/`:
 - `inicio-375.png`, `inicio-768.png`, `inicio-1440.png`.
 - `inicio-completa-375.png`, `inicio-completa-768.png`, `inicio-completa-1440.png`.
 - `caso-deja-vu-375.png`, `caso-deja-vu-1440.png`.
+- `perfil-daniel-375.png`, `perfil-daniel-768.png`, `perfil-daniel-1440.png`.
 
 El informe navegable de Playwright queda en `playwright-report/index.html`. Capturas, informes y fixtures están excluidos de Git.
 
