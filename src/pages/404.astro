@@ -1,0 +1,13 @@
+---
+import Layout from '../layouts/Layout.astro';
+import { NotFound } from '../components/Pages';
+import { brand } from '../content/site';
+---
+
+<Layout
+  title="Página no encontrada"
+  description={`Vuelve al inicio de ${brand.wordmark} o contacta con nosotros para hablar de tu proyecto.`}
+  noindex
+>
+  <NotFound />
+</Layout>
