@@ -83,7 +83,7 @@ Sin dominio, la versión local queda en noindex y no genera URLs de producción 
 
 ## Git, verificaciones y pendientes
 
-GitHub devuelve HTTP 403: `Sorry. Your account was suspended`. Se conservan ramas y commits locales. No se han creado repositorio privado, remotos, upstreams o pull requests. Integrar primero la base común mediante PR y después el perfil de Daniel cuando se restablezca el acceso. `main` queda reservada para versiones estables.
+Repositorio privado: [MirkovicV2/estudio-daniel-pablo](https://github.com/MirkovicV2/estudio-daniel-pablo). Las ramas `main`, `develop`, `feature/web-estudio` y `feature/portfolio-daniel` están publicadas con seguimiento de `origin`. La [PR #1](https://github.com/MirkovicV2/estudio-daniel-pablo/pull/1) integra la base común y la [PR #2](https://github.com/MirkovicV2/estudio-daniel-pablo/pull/2), el perfil de Daniel, en ese orden y hacia `develop`. `main` queda reservada para versiones estables.
 
 - [Flujo y orden de ramas](docs/GIT_WORKFLOW.md).
 - [PR de elementos comunes](docs/PR_WEB_ESTUDIO.md).
