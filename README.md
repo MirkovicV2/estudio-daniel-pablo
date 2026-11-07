@@ -89,6 +89,7 @@ Repositorio privado: [MirkovicV2/estudio-daniel-pablo](https://github.com/Mirkov
 - [PR de elementos comunes](docs/PR_WEB_ESTUDIO.md).
 - [PR del perfil de Daniel](docs/PR_PERFIL_DANIEL.md).
 - [Verificación y capturas](VERIFICATION.md).
+- [Investigación de referencias y decisiones de diseño](docs/DESIGN_RESEARCH.md).
 - [Contenido, recursos y borradores pendientes](CONTENT_REVIEW.md).
 
 Documentación oficial consultada: [Astro con React](https://docs.astro.build/en/guides/integrations-guide/react/), [sitemap](https://docs.astro.build/en/guides/integrations-guide/sitemap/), [transiciones](https://docs.astro.build/en/guides/view-transitions/) y [Fontsource](https://fontsource.org/docs/getting-started/variable).
