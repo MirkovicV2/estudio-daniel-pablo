@@ -28,6 +28,24 @@ if (!motion.matches && 'IntersectionObserver' in window) {
   });
 }
 const menu = document.querySelector<HTMLDetailsElement>('[data-mobile-menu]');
+function openLinkedDetail() {
+  let id: string;
+  try {
+    id = decodeURIComponent(window.location.hash.slice(1));
+  } catch {
+    return;
+  }
+  const target = document.getElementById(id);
+  if (
+    target instanceof HTMLDetailsElement &&
+    !target.matches('[data-mobile-menu]')
+  ) {
+    target.open = true;
+  }
+}
+openLinkedDetail();
+window.addEventListener('hashchange', openLinkedDetail);
+
 if (menu) {
   menu.addEventListener('click', (event) => {
     if ((event.target as HTMLElement).closest('a')) menu.open = false;

@@ -142,7 +142,7 @@ export function StudioPage() {
   return (
     <>
       <section className="page-intro shell">
-        <Eyebrow>Daniel & Pablo / El estudio</Eyebrow>
+        <Eyebrow>{brand.wordmark} / El estudio</Eyebrow>
         <h1>
           Dos especialidades.
           <br />

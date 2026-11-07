@@ -14,7 +14,8 @@ export const contacts = {
     shortName: 'Daniel Doral',
     email: 'danieldoral7@gmail.com',
     linkedin: 'https://es.linkedin.com/in/daniel-doral-ignjatovic',
-    portfolio: import.meta.env.PUBLIC_DANIEL_PORTFOLIO_URL?.trim() || undefined,
+    portfolio:
+      import.meta.env?.PUBLIC_DANIEL_PORTFOLIO_URL?.trim() || undefined,
   },
   pablo: {
     name: 'Pablo Castillo Flores',

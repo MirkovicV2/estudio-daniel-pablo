@@ -15,7 +15,11 @@ export default defineConfig({
   integrations: [
     react(),
     ...(site
-      ? [sitemap({ filter: (page) => !new URL(page).pathname.startsWith('/404') })]
+      ? [
+          sitemap({
+            filter: (page) => !new URL(page).pathname.startsWith('/404'),
+          }),
+        ]
       : []),
   ],
   server: { host: '127.0.0.1', port: 4322 },
