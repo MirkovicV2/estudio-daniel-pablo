@@ -8,6 +8,7 @@ const paths = [
   '/estudio/',
   '/proyectos/deja-vu/',
   '/contacto/',
+  '/equipo/daniel/',
 ];
 const screenshotDirectory = 'artifacts/screenshots';
 
@@ -100,6 +101,13 @@ for (const width of [375, 768, 1440]) {
       if (path === '/proyectos/deja-vu/' && width !== 768) {
         await page.screenshot({
           path: `${screenshotDirectory}/caso-deja-vu-${width}.png`,
+          animations: 'disabled',
+        });
+      }
+      if (path === '/equipo/daniel/') {
+        await page.screenshot({
+          path: `${screenshotDirectory}/perfil-daniel-${width}.png`,
+          fullPage: true,
           animations: 'disabled',
         });
       }
