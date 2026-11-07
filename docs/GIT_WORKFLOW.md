@@ -1,46 +1,47 @@
-# Git y publicación pendiente en GitHub
+# Git y GitHub
 
 ## Ramas y orden
 
 - `main`: punto de partida; reservada para versiones estables.
-- `develop`: base de integración, sin merges locales que sustituyan las pull requests solicitadas.
+- `develop`: rama de integración mediante pull requests.
 - `feature/web-estudio`: configuración, servicios, marca, diseño común, equipo, caso, contacto y pruebas.
 - `feature/portfolio-daniel`: creada desde `develop`, actualizada con los elementos comunes y destinada al perfil de Daniel.
 - No existe una rama de portfolio de Pablo. Su portfolio permanece en https://pablelas.es/.
 
-La rama de Daniel incorpora la base común para poder ejecutar la web completa. El orden remoto previsto es integrar primero `feature/web-estudio` mediante PR hacia `develop`, actualizar la rama de Daniel con `develop` y después integrar su PR. No se ha fusionado ninguna rama en `main`.
+La rama de Daniel incorpora la base común para ejecutar la web completa. El orden de integración es primero `feature/web-estudio` mediante PR hacia `develop`, después actualizar la rama de Daniel con `develop` y finalmente integrar su PR. No se ha fusionado ninguna rama en `main`.
 
-## Bloqueo comprobado
+## Repositorio y revisiones
 
-GitHub devuelve HTTP 403 al consultar la cuenta conectada:
+Repositorio privado de la cuenta **MirkovicV2**: https://github.com/MirkovicV2/estudio-daniel-pablo.
 
-> Sorry. Your account was suspended
+- [PR #1 — Web y elementos comunes](https://github.com/MirkovicV2/estudio-daniel-pablo/pull/1).
+- [PR #2 — Perfil de Daniel](https://github.com/MirkovicV2/estudio-daniel-pablo/pull/2).
 
-No se han podido crear el repositorio privado, los remotos, upstreams ni pull requests. Todo queda conservado en ramas locales. No hay URLs de repositorio inventadas ni intentos de sortear la restricción.
+`origin` apunta a https://github.com/MirkovicV2/estudio-daniel-pablo.git. Las cuatro ramas están publicadas y tienen seguimiento local. El bloqueo de la cuenta anterior se resolvió al autorizar GitHub CLI con la cuenta nueva. La autenticación queda en el almacén de credenciales del sistema; este repositorio usa el ayudante de GitHub CLI mediante configuración Git local, sin credenciales en el código.
 
-## Publicación de las ramas cuando se restablezca el acceso
+## Flujo habitual
 
-Con GitHub CLI autenticado y desde este proyecto:
+Antes de nuevos cambios, actualizar la base común desde `develop`:
 
 ```powershell
-gh repo create estudio-daniel-pablo --private --source . --remote origin
-git push -u origin main
-git push -u origin develop feature/web-estudio feature/portfolio-daniel
-gh pr create --base develop --head feature/web-estudio --title "Crea la web comercial de Daniel y Pablo" --body-file docs/PR_WEB_ESTUDIO.md
+git fetch origin
+git switch develop
+git pull --ff-only
+git switch feature/web-estudio
+git merge develop
 ```
 
-Revisar y fusionar la PR común en GitHub, conservando la rama. Después:
+Tras integrar una PR de elementos comunes en GitHub, conservar la rama y actualizar la de Daniel:
 
 ```powershell
 git switch develop
-git pull --ff-only origin develop
+git pull --ff-only
 git switch feature/portfolio-daniel
 git merge develop
 git push
-gh pr create --base develop --head feature/portfolio-daniel --title "Añade el perfil de Daniel al estudio" --body-file docs/PR_PERFIL_DANIEL.md
 ```
 
-Resolver cualquier conflicto conservando las aportaciones. No usar force push. `main` solo debe recibir una versión estable según el flujo que acordéis.
+Abrir las siguientes pull requests hacia `develop` con los cambios de cada ámbito. Resolver cualquier conflicto conservando las aportaciones. No usar force push ni borrar las ramas requeridas. `main` solo debe recibir una versión estable. No se configura GitHub Pages ni un despliegue del sitio.
 
 Git se ha preparado como MinGit oficial en este equipo, sin cambiar PATH global. Para usarlo en el terminal actual:
 
