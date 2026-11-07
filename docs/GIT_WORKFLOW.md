@@ -44,7 +44,7 @@ git push
 
 Abrir las siguientes pull requests hacia `develop` con los cambios de cada ámbito. Resolver cualquier conflicto conservando las aportaciones. No usar force push ni borrar las ramas requeridas. `main` solo debe recibir una versión estable.
 
-La configuración de Astro admite `SITE_URL` y `PAGES_BASE` para desplegar bajo una ruta de GitHub Pages. Pages no está activado: GitHub rechazó configurarlo porque el plan actual no permite Pages para estos repositorios privados. Se mantienen privados; publicar requiere un plan compatible o un repositorio público separado para el artefacto estático.
+GitHub Pages se despliega automáticamente al integrar cambios en `develop`, mediante `.github/workflows/deploy-pages.yml`. La configuración de Astro usa `SITE_URL` y `PAGES_BASE` para construir bajo la ruta del repositorio. El repositorio fuente es público.
 
 Git se ha preparado como MinGit oficial en este equipo, sin cambiar PATH global. Para usarlo en el terminal actual:
 
